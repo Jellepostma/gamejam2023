@@ -16,18 +16,20 @@ public class WeaponManager : MonoBehaviour
 
     public Weapon currentWeapon;
 
-    private int _playerId;
+    public Transform pivot, spawnPoint;
+
+    private int _playerId = 0;
 
     private float _pivotRate;
 
-    void Awake()
+    void Start()
     {
         _pivotRate = GameSettings.Instance.weaponPivotRate;
     }
 
-    public void Initialize(int player)
+    public void Initialize(int playerId)
     {
-        _playerId = player;
+        _playerId = playerId;
         LoadWeapon();
     }
 
@@ -49,7 +51,7 @@ public class WeaponManager : MonoBehaviour
 
     public void LoadWeapon()
     {
-        currentWeapon = GameObject.Instantiate<Weapon>(inventory[_currentWeaponIndex].weapon, transform);
+        currentWeapon = GameObject.Instantiate<Weapon>(inventory[_currentWeaponIndex].weapon, spawnPoint);
         currentWeapon.Initialize(_playerId);
     }
 
@@ -67,6 +69,6 @@ public class WeaponManager : MonoBehaviour
 
     public void Aim(float aimAmount)
     {
-        transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, Mathf.Clamp(transform.eulerAngles.z + aimAmount * _pivotRate * Time.deltaTime, 0f, 90f));
+        pivot.transform.eulerAngles = new Vector3(Mathf.Clamp(pivot.transform.eulerAngles.x + aimAmount * _pivotRate * Time.deltaTime, 0f, 90f), pivot.transform.eulerAngles.y, pivot.transform.eulerAngles.z);
     }
 }
