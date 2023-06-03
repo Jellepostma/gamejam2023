@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,57 +6,57 @@ public class WeaponManager : MonoBehaviour
     [System.Serializable]
     public class InventoryItem
     {
-        public Balloon balloon;
-        public int amount = 0;
+        public Weapon weapon;
+        public int amount;
     }
 
-    public List<InventoryItem> Inventory = new List<InventoryItem>();
+    public List<InventoryItem> inventory = new();
 
-    private int currentWeaponIndex = 0;
+    private int _currentWeaponIndex;
 
-    public Balloon currentWeapon;
+    public Weapon currentWeapon;
 
-    private int playerId = 0;
+    private int _playerId;
 
-    private float pivotRate;
+    private float _pivotRate;
 
     void Awake()
     {
-        pivotRate = GameSettings.instance.weaponPivotRate;
+        _pivotRate = GameSettings.Instance.weaponPivotRate;
     }
 
     public void Initialize(int player)
     {
-        playerId = player;
+        _playerId = player;
         LoadWeapon();
     }
 
     public void NextWeapon()
     {
-        while (Inventory[currentWeaponIndex].amount == 0)
+        while (inventory[_currentWeaponIndex].amount == 0)
         {
-            currentWeaponIndex = Mathf.RoundToInt(Mathf.Repeat(++currentWeaponIndex, Inventory.Count));
+            _currentWeaponIndex = Mathf.RoundToInt(Mathf.Repeat(++_currentWeaponIndex, inventory.Count));
         }
     }
 
     public void PreviousWeapon()
     {
-        while (Inventory[currentWeaponIndex].amount == 0)
+        while (inventory[_currentWeaponIndex].amount == 0)
         {
-            currentWeaponIndex = Mathf.RoundToInt(Mathf.Repeat(--currentWeaponIndex, Inventory.Count));
+            _currentWeaponIndex = Mathf.RoundToInt(Mathf.Repeat(--_currentWeaponIndex, inventory.Count));
         }
     }
 
     public void LoadWeapon()
     {
-        currentWeapon = GameObject.Instantiate<Balloon>(Inventory[currentWeaponIndex].balloon, transform);
-        currentWeapon.Initialize(playerId);
+        currentWeapon = GameObject.Instantiate<Weapon>(inventory[_currentWeaponIndex].weapon, transform);
+        currentWeapon.Initialize(_playerId);
     }
 
     public void OnStartPump()
     {
         currentWeapon.StartInflating();
-        Inventory[currentWeaponIndex].amount--;
+        inventory[_currentWeaponIndex].amount--;
     }
 
     public void OnEndPump()
@@ -68,6 +67,6 @@ public class WeaponManager : MonoBehaviour
 
     public void Aim(float aimAmount)
     {
-        transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, Mathf.Clamp(transform.eulerAngles.z + aimAmount * pivotRate * Time.deltaTime, 0f, 90f));
+        transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, Mathf.Clamp(transform.eulerAngles.z + aimAmount * _pivotRate * Time.deltaTime, 0f, 90f));
     }
 }

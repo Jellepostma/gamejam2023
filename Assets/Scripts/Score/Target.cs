@@ -2,18 +2,20 @@ using UnityEngine;
 
 public class Target : MonoBehaviour
 {
-
+    public BalloonManager balloonManager;
+    
     public Scorable scorable;
     
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("balloon"))
         {
-            var balloon = other.GetComponent<Balloon>();
-            var playerId = balloon.OwnerId;
+            var weapon = other.GetComponent<Weapon>();
+            var playerId = weapon.OwnerId;
             scorable.Score(playerId);
 
-            balloon.Pop();
+            weapon.Pop();
+            balloonManager.DecreaseBalloons();
             Destroy(gameObject);
         }
     }

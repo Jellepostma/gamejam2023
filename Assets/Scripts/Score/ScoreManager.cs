@@ -29,12 +29,7 @@ public class ScoreManager : MonoBehaviour
     public void AddScore(int player, int score)
     {
         scores[player] += score;
-        scoreTexts[player].text = "Score: " + scores[player].ToString();
-
-        if (scores[player] == 3)
-        {
-            GameManager.instance.GameOver();
-        }
+        scoreTexts[player].text = "Score: " + scores[player];
     }
 
 }

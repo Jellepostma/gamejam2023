@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Balloon : MonoBehaviour
+public class Weapon : MonoBehaviour
 {
     public float inflation = 0f; // 0 to 1
     public float inflationSpeed = 0.05f;

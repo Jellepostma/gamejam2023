@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameSettings : MonoBehaviour
 {
     private static GameSettings _instance;
-    public static GameSettings instance
+    public static GameSettings Instance
     {
         get
         {
