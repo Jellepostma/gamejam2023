@@ -10,6 +10,8 @@ public class Balloon : MonoBehaviour
 
     private Rigidbody rb;
 
+    public int OwnerId;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
