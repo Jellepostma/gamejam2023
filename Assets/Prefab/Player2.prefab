@@ -255,6 +255,7 @@ MonoBehaviour:
       m_Action: End Pump
       m_Flags: 0
     m_Flags: 0
+  playerId: 1
   weaponManager: {fileID: 8644622141855091500}
 --- !u!1 &8008194352781787237
 GameObject:

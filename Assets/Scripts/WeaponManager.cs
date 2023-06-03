@@ -17,7 +17,20 @@ public class WeaponManager : MonoBehaviour
 
     public Balloon currentWeapon;
 
-    public float pivotRate = 500f;
+    private int playerId = 0;
+
+    private float pivotRate;
+
+    void Awake()
+    {
+        pivotRate = GameSettings.instance.weaponPivotRate;
+    }
+
+    public void Initialize(int player)
+    {
+        playerId = player;
+        LoadWeapon();
+    }
 
     public void NextWeapon()
     {
@@ -38,6 +51,7 @@ public class WeaponManager : MonoBehaviour
     public void LoadWeapon()
     {
         currentWeapon = GameObject.Instantiate<Balloon>(Inventory[currentWeaponIndex].balloon, transform);
+        currentWeapon.Initialize(playerId);
     }
 
     public void OnStartPump()

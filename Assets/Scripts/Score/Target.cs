@@ -9,10 +9,12 @@ public class Target : MonoBehaviour
     {
         if (other.CompareTag("balloon"))
         {
-            Destroy(gameObject);
-            
-            var playerId = other.GetComponent<Balloon>().OwnerId;
+            var balloon = other.GetComponent<Balloon>();
+            var playerId = balloon.OwnerId;
             scorable.Score(playerId);
+
+            balloon.Pop();
+            Destroy(gameObject);
         }
     }
 }

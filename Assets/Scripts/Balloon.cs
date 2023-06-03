@@ -20,6 +20,11 @@ public class Balloon : MonoBehaviour
         col = GetComponent<Collider>();
     }
 
+    public void Initialize(int playerId)
+    {
+        this.OwnerId = playerId;
+    }
+
     public void StartInflating()
     {
         StartCoroutine(Inflate());
@@ -42,5 +47,10 @@ public class Balloon : MonoBehaviour
         col.enabled = true;
         rb.useGravity = true;
         rb.AddForce(gameObject.transform.forward * force * inflation);
+    }
+
+    public void Pop()
+    {
+        Destroy(gameObject);
     }
 }
