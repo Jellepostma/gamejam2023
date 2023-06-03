@@ -9,22 +9,37 @@ public class Balloon : MonoBehaviour
     public float force = 20f;
 
     private Rigidbody rb;
+    private Collider col;
+    private bool launched = false;
 
     public int OwnerId;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        col = GetComponent<Collider>();
     }
-    
-    public void Inflate()
+
+    public void StartInflating()
     {
-        inflation = Mathf.Clamp01(inflation + inflationSpeed * Time.deltaTime);
-        transform.localScale = Vector3.one * inflation;
+        StartCoroutine(Inflate());
+    }
+
+    IEnumerator Inflate()
+    {
+        while(!launched && inflation < 1f)
+        {
+            inflation = Mathf.Clamp01(inflation + inflationSpeed * Time.deltaTime);
+            transform.localScale = Vector3.one * inflation;
+            yield return null;
+        }
     }
 
     public void Launch()
     {
+        launched = true;
+        transform.parent = null;
+        col.enabled = true;
         rb.useGravity = true;
         rb.AddForce(gameObject.transform.forward * force * inflation);
     }
