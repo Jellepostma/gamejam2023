@@ -32,7 +32,7 @@ Transform:
   - {fileID: 6586929963812784844}
   - {fileID: 5864531562398551111}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2260337169299956020
 MonoBehaviour:
@@ -46,24 +46,116 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ad4435fd70dbda4e8e0277063385c4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startPump:
-    m_Name: Start Pump
+  aimAction:
+    m_Name: Aim
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: 3288b6fd-b966-4270-a18f-e809693dcd88
+    m_Id: 80d7ddcc-ca78-40e0-a288-8b55fd45a62b
     m_Processors: 
     m_Interactions: 
-    m_SingletonActionBindings: []
+    m_SingletonActionBindings:
+    - m_Name: Joycon
+      m_Id: fcfe1696-891d-4a39-a8e1-ec0020af9da4
+      m_Path: 1DAxis
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Aim
+      m_Flags: 4
+    - m_Name: negative
+      m_Id: 7c9541ec-9535-41bc-8a30-20c1b53e3a8c
+      m_Path: <HID::Nintendo Wireless Gamepad>/hat/down
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Aim
+      m_Flags: 8
+    - m_Name: positive
+      m_Id: 3b2b546b-bb8b-4ff4-858a-d200d096e9d8
+      m_Path: <HID::Nintendo Wireless Gamepad>/hat/up
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Aim
+      m_Flags: 8
+    - m_Name: Keyboard
+      m_Id: c9431855-986b-409f-8f34-5d2018f4fb64
+      m_Path: 1DAxis
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Aim
+      m_Flags: 4
+    - m_Name: negative
+      m_Id: 33abe860-ebe4-4073-84be-a12c32852a5a
+      m_Path: <Keyboard>/downArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Aim
+      m_Flags: 8
+    - m_Name: positive
+      m_Id: 84bb907d-ccba-473c-83ae-6cf3c3136a43
+      m_Path: <Keyboard>/upArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Aim
+      m_Flags: 8
     m_Flags: 0
-  endPump:
+  startPumpAction:
+    m_Name: Start Pump
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: 257be33d-8a0a-4a6d-9343-691f6ebc95ef
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: c1e77a08-26be-4136-a841-3cf825eb3011
+      m_Path: <HID::Nintendo Wireless Gamepad>/button2
+      m_Interactions: Press
+      m_Processors: 
+      m_Groups: 
+      m_Action: Start Pump
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 9cf1e4e0-d283-4a49-9df9-308e9a2ddde2
+      m_Path: <Keyboard>/space
+      m_Interactions: Press
+      m_Processors: 
+      m_Groups: 
+      m_Action: Start Pump
+      m_Flags: 0
+    m_Flags: 1
+  endPumpAction:
     m_Name: End Pump
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: 266887db-2cb4-4a80-a155-9dc8d63ce6ae
+    m_Id: 846a420e-495b-4707-add7-c5b0cad60571
     m_Processors: 
     m_Interactions: 
-    m_SingletonActionBindings: []
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 59f5f239-b48a-4756-b8e2-7eb164cb6188
+      m_Path: <HID::Nintendo Wireless Gamepad>/button2
+      m_Interactions: Press(behavior=1)
+      m_Processors: 
+      m_Groups: 
+      m_Action: End Pump
+      m_Flags: 0
+    - m_Name: 
+      m_Id: dc4c6c7a-20ec-4a53-b65b-b3dcb9c538e4
+      m_Path: <Keyboard>/space
+      m_Interactions: Press(behavior=1)
+      m_Processors: 
+      m_Groups: 
+      m_Action: End Pump
+      m_Flags: 0
     m_Flags: 0
+  balloon: {fileID: 0}
+  pivot: {fileID: 5864531562398551111}
+  pivotRate: 67.3
 --- !u!1 &8766418131322902997
 GameObject:
   m_ObjectHideFlags: 0
@@ -87,8 +179,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8766418131322902997}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.579092, y: 0.7153486, z: 0.1123409}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.888, y: 1.104, z: 0.1123409}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
