@@ -5,17 +5,25 @@ using UnityEngine;
 public class Balloon : MonoBehaviour
 {
     public float inflation = 0f; // 0 to 1
-    public float deflationSpeed = 0.025f;
     public float inflationSpeed = 0.05f;
+    public float force = 20f;
 
-    void Update()
+    private Rigidbody rb;
+
+    void Start()
     {
-        inflation = Mathf.Clamp01(inflation - deflationSpeed * Time.deltaTime);
+        rb = GetComponent<Rigidbody>();
     }
     
-
-    public  void Inflate()
+    public void Inflate()
     {
         inflation = Mathf.Clamp01(inflation + inflationSpeed * Time.deltaTime);
+        transform.localScale = Vector3.one * inflation;
+    }
+
+    public void Launch()
+    {
+        rb.useGravity = true;
+        rb.AddForce(gameObject.transform.forward * force * inflation);
     }
 }
