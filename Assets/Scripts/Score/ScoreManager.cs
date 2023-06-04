@@ -32,4 +32,12 @@ public class ScoreManager : MonoBehaviour
         scoreTexts[player].text = "Score: " + scores[player];
     }
 
+    public void HideScores()
+    {
+        foreach (var scoreText in scoreTexts)
+        {
+            scoreText.text = "";
+        }
+    }
+
 }

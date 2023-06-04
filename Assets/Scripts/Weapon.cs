@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,7 @@ public class Weapon : MonoBehaviour
     public float inflationSpeed = 0.05f;
     public float force = 20f;
     public SkinnedMeshRenderer skinnedMeshRenderer;
+    public int damage;
 
     private Rigidbody rb;
     private Collider col;
@@ -19,6 +21,15 @@ public class Weapon : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         col = GetComponent<Collider>();
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("fish"))
+        {
+            Destroy(other.gameObject);
+            Destroy(gameObject);
+        }
     }
 
     public void Initialize(int playerId)

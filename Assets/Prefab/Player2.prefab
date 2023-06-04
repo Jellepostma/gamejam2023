@@ -779,6 +779,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 558916977082841018}
     m_Modifications:
     - target: {fileID: 894677934832500021, guid: 7deb3765cfc7bb6ba9ba0d34cb3b181e, type: 3}
+      propertyPath: playerId
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 894677934832500021, guid: 7deb3765cfc7bb6ba9ba0d34cb3b181e, type: 3}
       propertyPath: spawnRangeX.x
       value: -1
       objectReference: {fileID: 0}

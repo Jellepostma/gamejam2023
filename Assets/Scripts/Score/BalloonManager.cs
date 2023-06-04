@@ -2,7 +2,9 @@ using UnityEngine;
 
 public class BalloonManager : MonoBehaviour
 {
-    
+
+    public int playerId;
+
     public GameObject balloon;
 
     public GameObject spawn;
@@ -41,7 +43,8 @@ public class BalloonManager : MonoBehaviour
 
         if (_balloonsCurrentAmount <= 0)
         {
-            GameManager.Instance.GameOver();
+            
+            GameManager.Instance.GameOver(playerId);
         }
     }
 }

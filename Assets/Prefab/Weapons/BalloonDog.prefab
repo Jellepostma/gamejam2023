@@ -382,7 +382,7 @@ MonoBehaviour:
   inflationSpeed: 0.25
   force: 5000
   skinnedMeshRenderer: {fileID: 9155236743166585068}
-  lookRotationOffset: {x: 0, y: 0, z: 90}
+  damage: 50
   OwnerId: 0
 --- !u!54 &5472731875267893218
 Rigidbody:
@@ -430,7 +430,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 0
   serializedVersion: 2
-  m_Radius: 0.78
-  m_Height: 2.24
-  m_Direction: 0
+  m_Radius: 0.92
+  m_Height: 7.15
+  m_Direction: 2
   m_Center: {x: -0.66, y: 0.13, z: 0}

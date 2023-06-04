@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.16404307, g: 0.20235947, b: 0.5355776, a: 1}
+  m_IndirectSpecularColor: {r: 0.16404307, g: 0.20235956, b: 0.5355777, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1056,9 +1056,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 036a3e169a134814d9c48578cf982a18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameOverText: {fileID: 0}
+  pressAnyKeyToPlayAgainText: {fileID: 0}
   players:
   - {fileID: 210951371}
   - {fileID: 870687802}
+  playAgainAction:
+    m_Name: Play Again
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 612e3fc9-523a-4fc5-b4e0-7a7e895059a5
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 430dc707-e097-4ae1-aacb-d2f0d4237bd0
+      m_Path: <Keyboard>/anyKey
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Play Again
+      m_Flags: 0
+    m_Flags: 0
 --- !u!1001 &514544237
 PrefabInstance:
   m_ObjectHideFlags: 0
