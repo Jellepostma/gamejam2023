@@ -29,12 +29,13 @@ public class Bubble : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("balloon"))
+        if (other.CompareTag("weapon") || other.CompareTag("superweapon"))
         {
             var playerId = other.GetComponent<Weapon>().OwnerId;
             GameManager.Instance.players[playerId].weaponManager.SetWeapon(weapon);
             Destroy(gameObject);
             Destroy(other.gameObject);
+            
         }
     }
 }

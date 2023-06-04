@@ -46,8 +46,7 @@ public class WeaponManager : MonoBehaviour
     public void OnStartPump()
     {
         currentWeapon.StartInflating();
-
-        RemoveWeapon();
+        
     }
 
     public void OnEndPump()
@@ -60,6 +59,7 @@ public class WeaponManager : MonoBehaviour
         }
 
         LoadWeapon();
+        currentInventory = null;
     }
 
     public void Aim(float aimAmount)

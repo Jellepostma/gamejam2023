@@ -333,7 +333,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c2e2f514c987a014e9edc49e9c99edea, type: 3}
       propertyPath: m_TagString
-      value: balloon
+      value: weapon
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -3887185075125053422, guid: c2e2f514c987a014e9edc49e9c99edea, type: 3}
@@ -383,6 +383,7 @@ MonoBehaviour:
   force: 5000
   skinnedMeshRenderer: {fileID: 9155236743166585068}
   damage: 50
+  bubble: {fileID: 0}
   OwnerId: 0
 --- !u!54 &5472731875267893218
 Rigidbody:

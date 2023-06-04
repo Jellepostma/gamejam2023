@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3256003089066839832}
   m_Layer: 0
   m_Name: BalloonSushi
-  m_TagString: Untagged
+  m_TagString: superweapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,8 +99,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inflation: 0
   inflationSpeed: 0.25
-  force: 300
+  force: 2500
   skinnedMeshRenderer: {fileID: 3048527711030026788}
+  damage: 25
   bubble: {fileID: 6678588170981296725, guid: 4c1375ceacc688e408d8929c0bf5868f, type: 3}
   OwnerId: 0
 --- !u!1001 &6936522033695668790

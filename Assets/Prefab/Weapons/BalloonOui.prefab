@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 244808896726664101}
   m_Layer: 0
   m_Name: BalloonOui
-  m_TagString: Untagged
+  m_TagString: weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33,7 +33,7 @@ Transform:
   m_Children:
   - {fileID: 4855895153370938132}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &2337199188212189478
 Rigidbody:
@@ -98,9 +98,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inflation: 0
-  inflationSpeed: 0.25
+  inflationSpeed: 0.2
   force: 3000
   skinnedMeshRenderer: {fileID: 1073213867719574765}
+  damage: 100
   bubble: {fileID: 759459072649019361, guid: 01b8c1c1c1e5c9a45b03bb5ea0b6da89, type: 3}
   OwnerId: 0
 --- !u!1001 &4965539197437500671
@@ -129,19 +130,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9dc98c58e9633c64fb9aadfc400c89e2, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9dc98c58e9633c64fb9aadfc400c89e2, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9dc98c58e9633c64fb9aadfc400c89e2, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.7071068
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9dc98c58e9633c64fb9aadfc400c89e2, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9dc98c58e9633c64fb9aadfc400c89e2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

@@ -7,6 +7,8 @@ TagManager:
   - balloon
   - fish
   - bubble
+  - weapon
+  - superweapon
   layers:
   - Default
   - TransparentFX

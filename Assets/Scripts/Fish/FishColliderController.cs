@@ -8,7 +8,6 @@ public class FishColliderController : MonoBehaviour
     {
         if (other.CompareTag("fish"))
         {
-            FishManager.Instance.DecreaseFish();
             Destroy(other.gameObject);
         }
     }

@@ -11,12 +11,12 @@ public class Target : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("balloon"))
+        if (other.CompareTag("weapon") || other.CompareTag("superweapon"))
         {
             var weapon = other.GetComponent<Weapon>();
 
             health -= weapon.damage;
-            meshRenderer.SetBlendShapeWeight(0, health < 0 ? 0 : health);
+            meshRenderer.SetBlendShapeWeight(0, health < 0 ? 100 : 100 - health);
 
             if (health <= 0)
             {
@@ -26,6 +26,7 @@ public class Target : MonoBehaviour
                 balloonManager.DecreaseBalloons();
                 weapon.Pop();
                 Destroy(gameObject);
+                return;
             }
             
             weapon.Pop();

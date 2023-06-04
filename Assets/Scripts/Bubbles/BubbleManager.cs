@@ -16,40 +16,18 @@ public class BubbleManager : MonoBehaviour
 
     private float spawnBubbleOn = 0f;
 
-    public int maxBubbleAmount;
-    public int bubbleAmount;
-    
-    private static BubbleManager _instance;
-    public static BubbleManager Instance
-    {
-        get
-        {
-            if (_instance is null)
-            {
-                Debug.Log("BubbleManager is not defined");
-            }
 
-            return _instance;
-        }
-    }
-    
-    private void Awake()
-    {
-        _instance = this;
-    }
-    
     private void Update()
     {
-        if ((spawnBubbleOn == 0f || spawnBubbleOn - Time.time <= 0) && bubbleAmount < maxBubbleAmount)
+        if ((spawnBubbleOn == 0f || spawnBubbleOn - Time.time <= 0))
         {
             SpawnBubble();
-            spawnBubbleOn = Time.time + Random.Range(5, 10);
+            spawnBubbleOn = Time.time + Random.Range(2, 8);
         }
     }
 
     private void SpawnBubble()
     {
-        bubbleAmount++;
         var choice = Random.Range(0, 3);
         var prefab = dogPrefab;
         if (choice == 1)
@@ -64,11 +42,6 @@ public class BubbleManager : MonoBehaviour
         var x = Random.Range(xMax, xMin);
         
         bubble.transform.position = new Vector3(x, y, z);
-    }
-
-    public void DecreaseBubbles()
-    {
-        bubbleAmount--;
     }
 
 }
