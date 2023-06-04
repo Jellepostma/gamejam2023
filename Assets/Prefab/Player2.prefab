@@ -764,12 +764,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a43c63b9394c6fb45bce2e563e36e485, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory:
-  - weapon: {fileID: 433026842032627359, guid: 42138e7cf31c50f4896e16eea8d1941a, type: 3}
-    amount: -1
   currentWeapon: {fileID: 0}
   pivot: {fileID: 2647648668194234607}
   spawnPoint: {fileID: 5234372219634783650}
+  bubbleSpawn: {fileID: 0}
 --- !u!1001 &4799023980071467469
 PrefabInstance:
   m_ObjectHideFlags: 0

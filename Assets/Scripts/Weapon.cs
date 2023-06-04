@@ -10,6 +10,7 @@ public class Weapon : MonoBehaviour
     public float force = 20f;
     public SkinnedMeshRenderer skinnedMeshRenderer;
     public int damage;
+    public GameObject bubble;
 
     private Rigidbody rb;
     private Collider col;

@@ -3,17 +3,6 @@ using UnityEngine;
 
 public class WeaponManager : MonoBehaviour
 {
-    [System.Serializable]
-    public class InventoryItem
-    {
-        public Weapon weapon;
-        public int amount;
-    }
-
-    public List<InventoryItem> inventory = new();
-
-    private int _currentWeaponIndex;
-
     public Weapon currentWeapon;
 
     public Transform pivot, spawnPoint;
@@ -21,6 +10,8 @@ public class WeaponManager : MonoBehaviour
     private int _playerId = 0;
 
     private float _pivotRate;
+
+    private InventoryItem currentInventory;
 
     void Start()
     {
@@ -30,40 +21,43 @@ public class WeaponManager : MonoBehaviour
     public void Initialize(int playerId)
     {
         _playerId = playerId;
+
+        SetWeapon(GameSettings.Instance.startWeapon);
         LoadWeapon();
     }
 
-    public void NextWeapon()
+    public void SetWeapon(InventoryItem weapon)
     {
-        while (inventory[_currentWeaponIndex].amount == 0)
-        {
-            _currentWeaponIndex = Mathf.RoundToInt(Mathf.Repeat(++_currentWeaponIndex, inventory.Count));
-        }
+        currentInventory = weapon;
     }
 
-    public void PreviousWeapon()
+    void RemoveWeapon()
     {
-        while (inventory[_currentWeaponIndex].amount == 0)
-        {
-            _currentWeaponIndex = Mathf.RoundToInt(Mathf.Repeat(--_currentWeaponIndex, inventory.Count));
-        }
+        currentInventory = null;
     }
 
-    public void LoadWeapon()
+    void LoadWeapon()
     {
-        currentWeapon = GameObject.Instantiate<Weapon>(inventory[_currentWeaponIndex].weapon, spawnPoint);
+        currentWeapon = GameObject.Instantiate<Weapon>(currentInventory.prefab, spawnPoint);
         currentWeapon.Initialize(_playerId);
     }
 
     public void OnStartPump()
     {
         currentWeapon.StartInflating();
-        inventory[_currentWeaponIndex].amount--;
+
+        RemoveWeapon();
     }
 
     public void OnEndPump()
     {
         currentWeapon.Launch();
+
+        if(currentInventory == null)
+        {
+            SetWeapon(GameSettings.Instance.startWeapon);
+        }
+
         LoadWeapon();
     }
 
