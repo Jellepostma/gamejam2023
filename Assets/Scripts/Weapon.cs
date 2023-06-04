@@ -7,6 +7,7 @@ public class Weapon : MonoBehaviour
     public float inflation = 0f; // 0 to 1
     public float inflationSpeed = 0.05f;
     public float force = 20f;
+    public SkinnedMeshRenderer skinnedMeshRenderer;
 
     private Rigidbody rb;
     private Collider col;
@@ -23,6 +24,7 @@ public class Weapon : MonoBehaviour
     public void Initialize(int playerId)
     {
         this.OwnerId = playerId;
+        skinnedMeshRenderer.SetBlendShapeWeight(0, 100f); // Deflate
     }
 
     public void StartInflating()
@@ -35,7 +37,7 @@ public class Weapon : MonoBehaviour
         while(!launched && inflation < 1f)
         {
             inflation = Mathf.Clamp01(inflation + inflationSpeed * Time.deltaTime);
-            transform.localScale = Vector3.one * inflation;
+            skinnedMeshRenderer.SetBlendShapeWeight(0, 100f - (inflation * 100f));
             yield return null;
         }
     }
@@ -46,7 +48,7 @@ public class Weapon : MonoBehaviour
         transform.parent = null;
         col.enabled = true;
         rb.useGravity = true;
-        rb.AddForce(gameObject.transform.forward * force * inflation);
+        rb.AddForce(-gameObject.transform.right * force * inflation);
     }
 
     public void Pop()

@@ -25,7 +25,7 @@ ModelImporter:
       name: Fan_Eyes
     second: {fileID: 2100000, guid: d58421a10905f8144ac138a690d8a14d, type: 2}
   materials:
-    materialImportMode: 2
+    materialImportMode: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 1
