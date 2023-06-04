@@ -58,8 +58,8 @@ public class FishManager : MonoBehaviour
         var x = direction ? xMin : xMax;
         var y = Random.Range(yMin, yMax);
         var force = Random.Range(fishForceMin, fishForceMax);
-        
-        fish.transform.Rotate(new Vector3(direction ? 90 : -90, 0, 0));
+
+        fish.transform.Rotate(new Vector3(0, (direction ? 0 : 180), 0));
         fish.transform.position = new Vector3(x, y, z);
         fish.GetComponent<Rigidbody>().AddForce(new Vector3(direction ? force : -force, 0, 0), ForceMode.Impulse);
     }
