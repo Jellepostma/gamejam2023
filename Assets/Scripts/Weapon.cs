@@ -24,15 +24,6 @@ public class Weapon : MonoBehaviour
         col = GetComponent<Collider>();
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("fish"))
-        {
-            Destroy(other.gameObject);
-            Destroy(gameObject);
-        }
-    }
-
     public void Initialize(int playerId)
     {
         this.OwnerId = playerId;

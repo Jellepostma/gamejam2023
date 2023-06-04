@@ -16,7 +16,7 @@ public class Target : MonoBehaviour
             var weapon = other.GetComponent<Weapon>();
 
             health -= weapon.damage;
-            meshRenderer.SetBlendShapeWeight(0, health);
+            meshRenderer.SetBlendShapeWeight(0, health < 0 ? 0 : health);
 
             if (health <= 0)
             {
@@ -24,6 +24,7 @@ public class Target : MonoBehaviour
                 scorable.Score(playerId);
                 
                 balloonManager.DecreaseBalloons();
+                weapon.Pop();
                 Destroy(gameObject);
             }
             
