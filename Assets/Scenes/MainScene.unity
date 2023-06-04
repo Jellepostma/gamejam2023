@@ -1165,7 +1165,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 4333579874003649825, guid: d7a7edb839a4418e39ec70711b1ae539, type: 3}
-  maxFishAmount: 10
   fishForceMax: 10
   fishForceMin: 3
   spawnFishOn: 0
@@ -1184,8 +1183,6 @@ MonoBehaviour:
   dogPrefab: {fileID: 474878949921718845, guid: 58e130146bbdd3441b55812923d95060, type: 3}
   sushiPrefab: {fileID: 474878949921718845, guid: 4c1375ceacc688e408d8929c0bf5868f, type: 3}
   ouiPrefab: {fileID: 474878949921718845, guid: 900b336d81043814c8b49c5ddcf6db77, type: 3}
-  maxBubbleAmount: 7
-  bubbleAmount: 0
 --- !u!1001 &514544237
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1528,7 +1525,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8642508801117268348, guid: e940d321ad10a0045b67ccd315768fbb, type: 3}
       propertyPath: balloonsAmount
-      value: 1
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8929318020841831932, guid: e940d321ad10a0045b67ccd315768fbb, type: 3}
       propertyPath: m_RootOrder
@@ -9669,7 +9666,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5688897580590662904, guid: c3b566bc66c07a6489ef218909e40d96, type: 3}
       propertyPath: balloonsAmount
-      value: 1
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
