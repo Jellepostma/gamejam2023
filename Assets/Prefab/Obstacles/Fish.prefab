@@ -54,7 +54,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 2.15}
+  m_Size: {x: 2.31, y: 1, z: 1.01}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &7124950128907087875
 Rigidbody:
@@ -121,7 +121,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1223585454435820215, guid: dce5091b2199add4db33922d6f8ec58b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.75
       objectReference: {fileID: 0}
     - target: {fileID: 1223585454435820215, guid: dce5091b2199add4db33922d6f8ec58b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -129,7 +129,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1223585454435820215, guid: dce5091b2199add4db33922d6f8ec58b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.82
+      value: 0.14
       objectReference: {fileID: 0}
     - target: {fileID: 1223585454435820215, guid: dce5091b2199add4db33922d6f8ec58b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -191,7 +191,7 @@ Animator:
   m_GameObject: {fileID: 2349572276122307125}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: cd8df0453af29684798fbbf1877f9997, type: 2}
+  m_Controller: {fileID: 9100000, guid: 5cb4ef2b0836ed043b8393751cdd2858, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
