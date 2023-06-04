@@ -1108,6 +1108,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponPivotRate: 100
+  startWeapon:
+    prefab: {fileID: 433026842032627359, guid: 42138e7cf31c50f4896e16eea8d1941a, type: 3}
+    bubblePrefab: {fileID: 0}
+  weaponList: []
 --- !u!114 &514314457
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1509,7 +1513,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8642508801117268348, guid: e940d321ad10a0045b67ccd315768fbb, type: 3}
       propertyPath: balloonsAmount
-      value: 1
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8929318020841831932, guid: e940d321ad10a0045b67ccd315768fbb, type: 3}
       propertyPath: m_RootOrder
@@ -9650,7 +9654,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5688897580590662904, guid: c3b566bc66c07a6489ef218909e40d96, type: 3}
       propertyPath: balloonsAmount
-      value: 1
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

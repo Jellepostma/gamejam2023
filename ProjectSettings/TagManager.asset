@@ -6,6 +6,7 @@ TagManager:
   tags:
   - balloon
   - fish
+  - bubble
   layers:
   - Default
   - TransparentFX

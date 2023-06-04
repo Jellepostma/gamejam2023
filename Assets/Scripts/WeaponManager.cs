@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,7 +12,7 @@ public class WeaponManager : MonoBehaviour
 
     private float _pivotRate;
 
-    private InventoryItem currentInventory;
+    private Weapon currentInventory;
 
     void Start()
     {
@@ -26,7 +27,7 @@ public class WeaponManager : MonoBehaviour
         LoadWeapon();
     }
 
-    public void SetWeapon(InventoryItem weapon)
+    public void SetWeapon(Weapon weapon)
     {
         currentInventory = weapon;
     }
@@ -38,7 +39,7 @@ public class WeaponManager : MonoBehaviour
 
     void LoadWeapon()
     {
-        currentWeapon = GameObject.Instantiate<Weapon>(currentInventory.prefab, spawnPoint);
+        currentWeapon = GameObject.Instantiate<Weapon>(currentInventory, spawnPoint);
         currentWeapon.Initialize(_playerId);
     }
 

@@ -24,14 +24,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7364548538499550231}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.034, y: -0.182, z: -0.355}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: -0.407, y: -0.182, z: -0.355}
   m_LocalScale: {x: 0.17117442, y: 0.17117442, z: 0.17117442}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5895296432816605439}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!137 &2375853266976565588
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -118,9 +118,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bubble_Oui
       objectReference: {fileID: 0}
+    - target: {fileID: 2430142812215710061, guid: 72dbad558a5153d4988c768cc779d3c6, type: 3}
+      propertyPath: m_TagString
+      value: bubble
+      objectReference: {fileID: 0}
     - target: {fileID: 7151402195534236047, guid: 72dbad558a5153d4988c768cc779d3c6, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7151402195534236047, guid: 72dbad558a5153d4988c768cc779d3c6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -175,6 +179,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2430142812215710061, guid: 72dbad558a5153d4988c768cc779d3c6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8892309680301632718}
+    - targetCorrespondingSourceObject: {fileID: 2430142812215710061, guid: 72dbad558a5153d4988c768cc779d3c6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -5224599114144349212}
   m_SourcePrefab: {fileID: 100100000, guid: 72dbad558a5153d4988c768cc779d3c6, type: 3}
 --- !u!1 &474878949921718845 stripped
 GameObject:
@@ -214,7 +221,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a00d85a5b79574d46b64743da9760396, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weapon: {fileID: 244808896726664101, guid: a8042d85486faff429b069a37a6a0e36, type: 3}
   speedRange: {x: 1, y: 5}
+--- !u!65 &-5224599114144349212
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 474878949921718845}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2, y: 2, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &5895296432816605439 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8574516407962327983, guid: 72dbad558a5153d4988c768cc779d3c6, type: 3}
