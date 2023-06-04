@@ -21,7 +21,7 @@ public class Bubble : MonoBehaviour
     {
         transform.Translate(transform.up * (speed * Time.deltaTime));
 
-        if (transform.position.y > 33)
+        if (transform.position.y > 50)
         {
             Destroy(gameObject);
         }
